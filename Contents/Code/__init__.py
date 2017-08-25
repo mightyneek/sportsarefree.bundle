@@ -2,7 +2,7 @@ NAME = 'Sports Are Free'
 BASE_URL = 'http://sportsarefree.xyz'
 EPG_URL = '%s/listings.json' % (BASE_URL)
 HTTP_HEADERS = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.12; rv:55.0) Gecko/20100101 Firefox/55.0', 'Referer': BASE_URL}
-ICON = 'icon-default.jpg'
+ICON = 'icon-default.png'
 ART = 'art-default.jpg'
 
 RE_MAINURL = Regex('var mainurl = "([^"]+)";')
