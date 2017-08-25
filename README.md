@@ -23,4 +23,4 @@ Where do I report issues?
 -------------------------
 Nowhere, this channels is 0% supported. Fork it, change it, update it, I will consider updated code in the form of pull requests.
 
-<img src="https://raw.githubusercontent.com/piplongrun/sportsarefree.bundle/master/Contents/Resources/icon-default.jpg" width="150">
+<img src="https://raw.githubusercontent.com/piplongrun/sportsarefree.bundle/master/Contents/Resources/icon-default.png" width="150">
