@@ -46,6 +46,7 @@ def MainMenu():
 def NFL():
 
 	oc = ObjectContainer(title2='NFL')
+	oc.add(CreateVideoClipObject(title='nfltv', thumb=R(ICON)))
 
 	html = HTML.ElementFromURL('%s/%s' % (BASE_URL, 'nfl'), headers=HTTP_HEADERS, cacheTime=60)
 	channel_list = html.xpath('//span[@data and @class!="date"]')
