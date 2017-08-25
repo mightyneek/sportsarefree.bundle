@@ -18,6 +18,7 @@ def Start():
 def MainMenu():
 
 	oc = ObjectContainer()
+	oc.add(DirectoryObject(key=Callback(NFL), title='NFL', thumb=R(ICON)))
 
 	html = HTML.ElementFromURL(BASE_URL, headers=HTTP_HEADERS, cacheTime=CACHE_1HOUR)
 	channel_list = html.xpath('//div[@class="grid-item"]')
@@ -32,6 +33,27 @@ def MainMenu():
 
 		if epg_info:
 			title = '%s: %s' % (title, epg_info)
+
+		oc.add(CreateVideoClipObject(
+			title = title,
+			thumb = thumb
+		))
+
+	return oc
+
+####################################################################################################
+@route('/video/sportsarefree/nfl')
+def NFL():
+
+	oc = ObjectContainer(title2='NFL')
+
+	html = HTML.ElementFromURL('%s/%s' % (BASE_URL, 'nfl'), headers=HTTP_HEADERS, cacheTime=60)
+	channel_list = html.xpath('//span[@data and @class!="date"]')
+
+	for channel in channel_list:
+
+		title = channel.get('data')
+		thumb = R(ICON)
 
 		oc.add(CreateVideoClipObject(
 			title = title,
