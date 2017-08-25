@@ -12,9 +12,11 @@ See the support article "[How do I manually install a channel?](https://support.
 Notes
 -----
 - Firewall
+
 Outgoing ports used: tcp/80, tcp/8080
 
 - Geoblocking
+
 This channel does not work outside the USA.
 
 Where do I report issues?
