@@ -13,6 +13,19 @@ def Start():
 
 	ObjectContainer.title1 = NAME
 
+	try:
+		json_obj = JSON.ObjectFromURL('http://ip-api.com/json', cacheTime=10)
+	except:
+		Log("ip check failed")
+		json_obj = None
+
+	if json_obj and 'countryCode' in json_obj and json_obj['countryCode'] != 'US':
+		Log("============================== WARNING ==============================")
+		Log("According to your ip address you are not in the United States!")
+		Log("This channel does not work outside the United States as stated in the README:")
+		Log("https://github.com/piplongrun/sportsarefree.bundle/blob/master/README.md")
+		Log("=====================================================================")
+
 ####################################################################################################
 @handler('/video/sportsarefree', NAME, art=ART, thumb=ICON)
 def MainMenu():
