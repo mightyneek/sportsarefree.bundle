@@ -17,7 +17,7 @@ Outgoing ports used: tcp/80, tcp/8080
 
 - Geoblocking
 
-This channel does not work outside the USA.
+This channel does not work outside the USA (both your Plex server **AND** your Plex client(s) need to be in the USA).
 
 Where do I report issues?
 -------------------------
