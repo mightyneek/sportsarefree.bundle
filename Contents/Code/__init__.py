@@ -5,8 +5,7 @@ HTTP_HEADERS = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.12; rv:
 ICON = 'icon-default.png'
 ART = 'art-default.jpg'
 
-RE_MAINURL = Regex('var mainurl = "([^"]+)";')
-RE_SOURCE = Regex('source: prefix\+"([^"]+)"')
+RE_URL = Regex('var qqnn = "([^"]+)";')
 
 ####################################################################################################
 def Start():
@@ -125,12 +124,7 @@ def CreateVideoClipObject(title, thumb, include_container=False, **kwargs):
 def PlayVideo(id, **kwargs):
 
 	url = '%s/%s' % (BASE_URL, id)
-
 	page = HTTP.Request(url, headers=HTTP_HEADERS, cacheTime=CACHE_1HOUR).content
-
-	mainurl = RE_MAINURL.search(page).group(1)
-	source = RE_SOURCE.search(page).group(1)
-
-	video_url = '%s%s' % (mainurl, source)
+	video_url = String.Decode(RE_URL.search(page).group(1))
 
 	return IndirectResponse(VideoClipObject, key=video_url)
